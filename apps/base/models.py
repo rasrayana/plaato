@@ -95,30 +95,44 @@ class History(models.Model):
         verbose_name = "Наша история",
         verbose_name_plural = "Наша история"
         
-class Offer(models.Model):
-    image = models.ImageField(
-        upload_to="offer_image",
-        verbose_name="Фотография"
-    )
+class Reservation(models.Model):
     title = models.CharField(
         max_length=255,
-        verbose_name="Название блюда"
+        verbose_name="Название"
+    )
+    image = models.ImageField(
+        upload_to="reservation_image",
+        verbose_name="Фотография"
     )
     descriptions = models.TextField(
-        verbose_name="Описание блюда"
+        verbose_name="Описание"
     )
-    price = models.CharField(
-        max_length=255,
-        verbose_name="Цена"
-    )
-    type = models.CharField(
-        max_length=255,
-        verbose_name="Тип блюда"
-    )
-    
     def __str__(self):
         return self.title
     
     class Meta:
-        verbose_name = "Предложение",
-        verbose_name_plural = "Предложение"
+        verbose_name = "Забронировать",
+        verbose_name_plural = "Забронировать"
+
+class Team(models.Model):
+    name = models.CharField(
+        max_length=255,
+        verbose_name="Имя"
+    )
+    image = models.ImageField(
+        upload_to="reservation_image",
+        verbose_name="Фотография"
+    )
+    job = models.CharField(
+        max_length=255,
+        verbose_name="Работа"
+    )
+    descriptions = models.TextField(
+        verbose_name="Описание"
+    )
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = "Команда",
+        verbose_name_plural = "Команда"

@@ -173,8 +173,8 @@
 		<section id="menu-section">
 			<div class="container">
 				<div class="title-section">
-					<h1>Our Menu</h1>
-					<p>Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna <br> nibh, viverra non, semper suscipit, posuere a, pede.</p>
+					<h1>Наше меню</h1>
+					<p>Приветствуем вас в нашем уютном кафе с неповторимым меню! От вдохновляющих завтраков до уютных обедов и ароматных напитков – наше меню создано с любовью к простоте и вкусу. Насладитесь каждым угощением в уютной атмосфере нашего кафе</p>
 				</div>
 				<div class="menu-box">
 					<!-- Nav tabs -->
@@ -544,25 +544,25 @@
 					<div class="row">
 						<div class="col-md-6">
 							<div class="title-section white">
-								<h1>Make Reservation</h1>
-								<p>Booking a table has never been so easy with free &amp; instsstant online <br> restaurant reservations, booking now!!</p>
+								<h1>Забронировать</h1>
+								<p>{{reservation.description}}</p>
 							</div>
 							<form class="reservation-form">
-								<label>Guest Name:</label>
-								<input type="text" name="name-guest" id="name-guest" placeholder="Name"/>
-								<label>Date:</label>
-								<input type="text" name="date-guest" id="date-guest" placeholder="mm/dd/yyyy"/>
+								<label>Имя гостя:</label>
+								<input type="text" name="name-guest" id="name-guest" placeholder="Имя"/>
+								<label>Дата:</label>
+								<input type="text" name="date-guest" id="date-guest" placeholder="мм/дд/гггг"/>
 								<div class="row">
 									<div class="col-md-6">
-										<label>Time:</label>
+										<label>Время:</label>
 										<input type="text" name="time-guest" id="time-guest" placeholder="7:00 pm"/>
 									</div>
 									<div class="col-md-6">
-										<label>Pers:</label>
-										<input type="text" name="pers-guest" id="pers-guest" placeholder="2 people"/>
+										<label>Количество человек:</label>
+										<input type="text" name="pers-guest" id="pers-guest" placeholder="1-10"/>
 									</div>
 								</div>
-								<input type="submit" name="submit-reservation" id="submit-reservation" value="Find a Table" />
+								<input type="submit" name="submit-reservation" id="submit-reservation" value="Найти столик" />
 								<div id="msg-rsv"></div>
 							</form>
 						</div>
@@ -577,20 +577,20 @@
 		<section id="team-section">
 			<div class="container">
 				<div class="title-section">
-					<h1>Meet Our Team</h1>
-					<p>Sed arcu. Cras consequat.</p>
+					<h1>Встречайте нашу комманду</h1>
+					<p>Любители котят</p>
 				</div>
 				<div class="team-box owl-wrapper">
 					<div class="owl-carousel" data-num="4">
-
+						{% for team in team %}
 						<div class="item team-post">
 							<div class="inner-team-post">
 								<div class="team-gal">
-									<img src="{% static 'upload/mem1.jpg' %}	" alt="">
+									<img src="{{team.image.urls}}	" alt="">
 								</div>
-								<h2>James Evans</h2>
-								<span>Cook</span>
-								<p>Duis dapibus aliquam mi, eget euismod scelerisque ut. </p>
+								<h2>{{team.name}}</h2>
+								<span>{{team.job}}</span>
+								<p>{{team.description}}</p>
 								<ul class="social-icons">
 									<li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
 									<li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
@@ -599,75 +599,7 @@
 								</ul>
 							</div>
 						</div>
-
-						<div class="item team-post">
-							<div class="inner-team-post">
-								<div class="team-gal">
-									<img src="{% static 'upload/mem2.jpg' %}	" alt="">
-								</div>
-								<h2>Kate Howston</h2>
-								<span>Chef</span>
-								<p>Duis dapibus aliquam mi, eget euismod scelerisque ut. </p>
-								<ul class="social-icons">
-									<li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-									<li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-									<li><a class="google" href="#"><i class="fa fa-google-plus"></i></a></li>
-									<li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
-								</ul>
-							</div>
-						</div>
-
-						<div class="item team-post">
-							<div class="inner-team-post">
-								<div class="team-gal">
-									<img src="{% static 'upload/mem3.jpg' %}	" alt="">
-								</div>
-								<h2>Albert Dupontel</h2>
-								<span>Chef</span>
-								<p>Duis dapibus aliquam mi, eget euismod scelerisque ut. </p>
-								<ul class="social-icons">
-									<li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-									<li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-									<li><a class="google" href="#"><i class="fa fa-google-plus"></i></a></li>
-									<li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
-								</ul>
-							</div>
-						</div>
-
-						<div class="item team-post">
-							<div class="inner-team-post">
-								<div class="team-gal">
-									<img src="{% static 'upload/mem4.jpg' %}	" alt="">
-								</div>
-								<h2>Michael Brown</h2>
-								<span>Cook</span>
-								<p>Duis dapibus aliquam mi, eget euismod scelerisque ut. </p>
-								<ul class="social-icons">
-									<li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-									<li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-									<li><a class="google" href="#"><i class="fa fa-google-plus"></i></a></li>
-									<li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					
-						<div class="item team-post">
-							<div class="inner-team-post">
-								<div class="team-gal">
-									<img src="{% static 'upload/mem1.jpg' %}	" alt="">
-								</div>
-								<h2>James Evans</h2>
-								<span>Creative director</span>
-								<p>Duis dapibus aliquam mi, eget euismod scelerisque ut. </p>
-								<ul class="social-icons">
-									<li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-									<li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-									<li><a class="google" href="#"><i class="fa fa-google-plus"></i></a></li>
-									<li><a class="instagram" href="#"><i class="fa fa-instagram"></i></a></li>
-								</ul>
-							</div>
-						</div>
-
+						{% endfor %}
 					</div>
 				</div>
 			</div>
@@ -683,30 +615,30 @@
 					<div class="row">
 						<div class="col-md-3 col-sm-6">
 							<div class="statistic-post">
-								<p><span class="timer" data-from="0" data-to="23"></span></p>
-								<h2>Years Experience</h2>
-								<p>Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.</p>
+								<p><span class="timer" data-from="0" data-to="10"></span></p>
+								<h2>Лет опыта</h2>
+								<p>Уже 10 лет трудимся ради наших клиентов</p>
 							</div>
 						</div>
 						<div class="col-md-3 col-sm-6">
 							<div class="statistic-post">
-								<p><span class="timer" data-from="0" data-to="3200"></span></p>
-								<h2>Hours of Cooking</h2>
-								<p>Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.</p>
+								<p><span class="timer" data-from="0" data-to="2200"></span></p>
+								<h2>Часов готовки</h2>
+								<p>Готовим с любовью</p>
 							</div>
 						</div>
 						<div class="col-md-3 col-sm-6">
 							<div class="statistic-post">
 								<p><span class="timer" data-from="0" data-to="5000"></span></p>
-								<h2>Happy Clients</h2>
-								<p>Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.</p>
+								<h2>Счастливых клиентов</h2>
+								<p>Присоединяйтесь к нашему сообществу удовлетворенных гостей</p>
 							</div>
 						</div>
 						<div class="col-md-3 col-sm-6">
 							<div class="statistic-post">
-								<p><span class="timer" data-from="0" data-to="12"></span></p>
-								<h2>Skilled Chefs</h2>
-								<p>Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.</p>
+								<p><span class="timer" data-from="0" data-to="30"></span></p>
+								<h2>Различных котов</h2>
+								<p>Любой из этих прекрасных созданий может стать частью и вашей семьи</p>
 							</div>
 						</div>
 					</div>
@@ -720,14 +652,15 @@
 		<section id="gallery-section">
 			<div class="container">
 				<div class="title-section">
-					<h1>Our Gallery</h1>
-					<p>Morbi in sem quis dui placerat ornare. </p>
+					<h1>Галерея</h1>
+					<p>Здесь вы можете насладиться не только изысканным кофе, но и уникальной атмосферой,
+						 где забота о животных становится частью вашего визита.</p>
 				</div>
 				<ul class="filter">
-					<li><a class="active" href="#" data-filter="*">All</a></li>
-					<li><a href="#" data-filter=".desert">Desserts</a></li>
-					<li><a href="#" data-filter=".rest">Restaurant</a></li>
-					<li><a href="#" data-filter=".dinner">Dinner</a></li>
+					<li><a class="active" href="#" data-filter="*">Все</a></li>
+					<li><a href="#" data-filter=".desert">Кошки</a></li>
+					<li><a href="#" data-filter=".rest">Блюда</a></li>
+					<li><a href="#" data-filter=".dinner">Напитки</a></li>
 				</ul>
 			</div>
 			<div class="gallery-box iso-call">
@@ -841,14 +774,14 @@
 										Открытые часы
 									</h1>
 									<p>
-										<span>Monday — Thursday</span>
-										<span class="time">8 am — 11 pm</span>
+										<span>Понедельник — Среда</span>
+										<span class="time">08:00 — 22:00</span>
 									</p>
 									<p>
-										<span>Friday — Sunday</span>
-										<span class="time">11 am — 11 pm</span>
+										<span>Четверг — Воскресенье</span>
+										<span class="time">11:00 — 22:00</span>
 									</p>
-									<p>Note: Restaurant is closed on holidays.</p>
+									<p>По праздникам мы не работаем</p>
 								</div>
 							</div>
 							<div class="col-md-4">
@@ -858,11 +791,11 @@
 									</h1>
 
 									<form id="contact-form">
-										<input name="name" id="name" type="text" placeholder="Name*">
-										<input name="mail" id="mail" type="text" placeholder="Email*">
-										<textarea name="comment" id="comment" placeholder="*Message*"></textarea>
+										<input name="name" id="name" type="text" placeholder="Имя">
+										<input name="mail" id="mail" type="text" placeholder="Почта">
+										<textarea name="comment" id="comment" placeholder="*Ваше сообщение"></textarea>
 										<div class="submit-area">
-											<input type="submit" id="submit_contact" value="Send Message">
+											<input type="submit" id="submit_contact" value="Отправить сообщение">
 											<div id="msg" class="message"></div>								
 										</div>
 									</form>
